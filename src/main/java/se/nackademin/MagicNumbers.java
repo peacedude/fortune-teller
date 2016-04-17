@@ -7,30 +7,58 @@ public class MagicNumbers {
     private String location;
     private int age;
     private int height;
+    
+    int subSeven(int value){
+    while(value>=10)
+        value -= 7;
+    return value;
+    }
+    
+    int addTen(int value){
+    while(value<0)
+        value +=10;
+    return value;
+    }
+    double divTen(double value){
+        while(value<10)
+            value /= 2;
+        return value;
+    }
 
-    public int calculateA() {
-        //TODO: calculate A
-        return 0;
+    public int  calculateA() {
+        MagicNumbers matte = new MagicNumbers();
+        int spaces = name.length() - name.replace(" ", "").length() + 1;
+        return matte.subSeven(spaces + age); 
     }
 
     public int calculateB() {
-        //TODO: calculate B
-        return 0;
+        MagicNumbers matte = new MagicNumbers();
+        return matte.subSeven(location.length() + income);
     }
 
     public int calculateC() {
-        //TODO: calculate C
-        return 0;
+        MagicNumbers matte = new MagicNumbers();
+        return matte.addTen(calculateA()+calculateB() - height);
     }
 
     public int calculateD() {
-        //TODO: calculate D
-        return 0;
+        MagicNumbers matte = new MagicNumbers();
+        if(calculateA()>5)
+            return matte.addTen(calculateA()+calculateB()-income);
+        else
+        return matte.addTen(calculateA()+calculateC() - income);
     }
 
     public int calculateE() {
-        //TODO: calculate E
-        return 0;
+        MagicNumbers matte = new MagicNumbers();
+        long Calc1 = age*income;
+        long multiply1 = Calc1*income;
+        long multiply2 = multiply1*height;
+        double Calc2 = (double)Math.sqrt(multiply2);
+        while(Calc2>10)
+            Calc2 /= 2;
+        int Calc3 = (int)Math.round(Calc2);
+        return Calc3;
     }
 
     public void setName(String name) {
